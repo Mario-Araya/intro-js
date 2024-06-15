@@ -1,10 +1,25 @@
 
 
-const  sayHello = (name = 'Mario', age = 0) => `Hello world function! ${name} age ${age}`
-const add = (a = 0, b = 0) => a + b
+// httpClient
+//     .then(response => response.json())
+//     .then(data => console.log(data));
 
+const findAllUsers = async() => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const users = await response.json();
+  const ul = document.createElement('ul');
 
-const result = sayHello('Mario', 22)
+  users.forEach(user => {
+      const li = document.createElement('li');
+      li.innerText = user.name;
+      ul.append(li);
+      console.log(user.name);
+  });
 
-console.log(result)
-console.log(add(10,5))
+  document.getElementById('root').append(ul);
+}
+
+findAllUsers();
+
+// console.log(users)
+console.log('Hola que tal!');
