@@ -1,18 +1,13 @@
 
 
-let firstName = 'Mario'
+function sayHello(name = 'Mario', age = 0) {
 
-firstName = 'Fernando'
+  const greeting = `Hello world function! ${name} age ${age}`
 
-const lastName = 'Araya'
-
-const condition = true
-
-if (condition) {
-  const lastName = 'Royo'
-  console.log(lastName)
+  return greeting
 }
 
 
-console.log(`Hello World!  ${firstName} - ${lastName}` )
+const result = sayHello('Mario', 22)
 
+console.log(result)
